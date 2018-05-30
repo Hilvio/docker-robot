@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Suite Setup    Open Browser  about:blank  remote_url=http://standalone_chrome:4444/wd/hub
+Suite Setup    Open Browser  about:blank  remote_url=http://standalone_chrome:4444/wd/hub  desired_capabilities=browserName:chrome
 Suite Teardown    Close All Browsers
 
 
