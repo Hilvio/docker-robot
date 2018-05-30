@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Suite Setup    Open Browser  Chrome  about:blank
+Suite Setup    Open Browser  about:blank  Chrome
 Suite Teardown    Close All Browsers
 
 
