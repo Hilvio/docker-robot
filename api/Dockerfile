@@ -4,7 +4,7 @@
 FROM python:3.6
 
 # Copy test project files to the image folder
-COPY . /api-tests
+COPY requirements.txt api-tests/
 
 # Make the folder as a working directory
 WORKDIR /api-tests

@@ -4,7 +4,7 @@
 FROM python:3.6
 
 # Copy test project files to the image folder
-COPY . /web-tests
+COPY requirements.txt web-tests/
 
 # Make the folder as a working directory
 WORKDIR /web-tests

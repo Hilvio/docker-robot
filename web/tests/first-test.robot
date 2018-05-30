@@ -11,6 +11,7 @@ ${LOGO}    css=img#hplogo
 
 
 *** Test Cases ***
+
 Google page has logo
 
     When I open Google

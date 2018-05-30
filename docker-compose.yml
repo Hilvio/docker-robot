@@ -11,8 +11,9 @@ services:
       - standalone_chrome
     build: web/.
     volumes:
-      - ./reports/web-tests:/web-tests/reports
-      - ./temp/downloads:/web-tests/temp/downloads
+      - ./web:/web-tests
+      - ./reports/web-tests:/reports
+      - ./temp/downloads:/temp/downloads
       
   robot_tests_api:
     networks:
@@ -21,8 +22,9 @@ services:
     command: /bin/sleep infinity
     build: api/.
     volumes:
-      - ./reports/api-tests:/api-tests/reports
-      - ./temp/downloads:/api-tests/temp/downloads    
+      - ./api:/api-tests
+      - ./reports/api-tests:/reports
+      - ./temp/downloads:/temp/downloads    
 
   standalone_chrome:
     networks:
