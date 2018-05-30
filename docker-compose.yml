@@ -1,1 +1,40 @@
 
+version: '2'
+services:
+
+  robot_tests_web:
+    networks:
+      robottestsnw: {}
+    container_name: robot_tests_web
+    command: /bin/sleep infinity
+    depends_on:
+      - standalone_chrome
+    build: web/.
+    volumes:
+      - ./reports:/web-tests/reports
+      - ./temp/downloads:/web-tests/temp/downloads
+      
+  robot_tests_api:
+    networks:
+      robottestsnw: {}
+    container_name: robot_tests_api
+    command: /bin/sleep infinity
+    build: api/.
+    volumes:
+      - ./reports:/api-tests/reports
+      - ./temp/downloads:/api-tests/temp/downloads    
+
+  standalone_chrome:
+    networks:
+      robottestsnw: {}
+    container_name: standalone_chrome
+    ports:
+     - 4444:4444
+     - 5900:5900
+    image: selenium/standalone-chrome-debug
+    volumes:
+      - ./temp/downloads:/temp/downloads
+
+networks:
+  robottestsnw:
+    driver: bridge
